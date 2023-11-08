@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+  <head>
+	  <title>Reservar Habitacion </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    
+    
+    
+    <style type="text/css">
+    #div1 {
+	position: absolute;
+	width: 1000px;
+	height: 1000px;
+	z-index: 1;
+	left: 200px;
+	top: 80px;
+}
+
+div {
+#  padding: 7px
+}
+
+form {
+  /* Centrar el formulario en la página */
+  margin: 0 auto;
+  width: 1000px;
+  /* Esquema del formulario */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+
+
+    </style>
+    
+<center>
+
+  <h1>Formulario Reservar Habitación</h1> 
+	 <p>PetHotel</p>  <br>
+	 	 </center>
+
+    <!-- Optional JavaScript validarInsertarSocio.php-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../static/js/jquery-3.7.1.min.js"></script>
+    
+<script>
+  $(function() {
+
+    $('#btnSignUpRH').click(function() {
+
+        $.ajax({
+
+            url: '/signUpRH',
+
+            data: $('form').serialize(),
+
+            type: 'POST',
+
+            success: function(response) {
+
+                 $("#modal-exito").modal('show');
+
+            },
+
+            error: function(error) {
+
+                $("#modal-error").modal('show'); 
+
+            }
+
+        });
+
+    });
+
+});
+
+  
+</script>
+
+
+
+ </head>
+<body >
+	  
+     
+      
+	 
+	   <form name="datosRH" id="datosRH" action="" method="post">
+	  <div class="form-row">
+	
+<div class="form-group col-md-6">
+     <b> <label for="inputEmail4">Nro. Reservación:</label> </b> 
+      <input type="text" class="form-control" id="txtIdrh" name="txtIdrh" maxlength="10" required >  <small>Ingrese numero de Reservación.</small>
+     </div> 
+
+     	  
+    
+    	 
+	<div class="form-group col-md-6">
+      <b><label for="inputEmail4">Nombre del Cliente:</label></b>
+      <input type="text" class="form-control" id="txtCliente" name="txtCliente" required> <small>Ingrese Nombres del cliente.</small>
+     </div> 
+	<div class="form-group col-md-6">
+      <b><label for="inputEmail4">Fecha de Llegada:</label></b>
+      <input type="date" class="form-control" id="txtFl" name="txtFl" required> <small>Ingrese Fecha de Llegada.</small>
+     </div>
+	<div class="form-group col-md-6">
+      <b><label for="inputEmail4">Fecha de Salida:</label></b>
+      <input type="date" class="form-control" id="txtFs" name="txtFs" required> <small>Ingrese Fecha de Salida.</small>
+     </div>
+	
+	<div class="form-group col-md-6">
+      <b><label for="inputEmail4">Tipo de Habitación:</label></b>
+      <input type="text" class="form-control" id="txtTh" name="txtTh" required> <small>Ingrese Tipo de Habitación.</small>
+     </div>
+	
+	
+    <div class="form-group col-md-6">
+      <b><label for="inputEmail4">Descipción:</label></b>
+      <input type="text" class="form-control" id="txtDesc" name="txtDesc" required><small>Ingrese Descripción.</small>
+     </div> 
+       <div class="form-group col-md-6">
+      <b><label for="inputEmail4">Servicio Adicional:</label></b>
+      <input type="text" class="form-control" id="txtServ" name="txtServ" required><small>Ingrese Servicio Adicional.</small>
+     </div>    
+	 
+	 
+	 <div class="form-group col-md-6">
+     <b><label for="inputEmail4">Status:</label></b>
+	 <select id="selStatus" name="selStatus"class="form-control" >
+        <option selected> </option>
+        <option value="Confirmada">Confirmada</option>
+        <option value="Cancelada">Cancelada</option>
+       
+       </select> <small>Ingrese Satus </small>
+     </div> 
+	 
+	 
+	 
+	 
+	 </div>
+	
+	 
+	 </div>	 
+	
+<br><br>
+        <button id="btnSignUpRH" id="btnSignUpRH" type="button" class="btn btn-primary">Reservar Hab.</button>
+
+      
+
+<button type="reset" class="btn btn-secondary" title="Limpiar formulario">Limpiar Form.</button>
+
+</form>
+<!-- Modal -->
+<div class="modal fade" id="modal-exito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informacion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Datos Ingresados Correctamente </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informacion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Ocurrio un Error Comuniquese con el Admin del sistema </pp>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

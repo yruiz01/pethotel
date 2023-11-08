@@ -1,0 +1,287 @@
+
+
+body{
+    background-color: #001837;
+}
+
+*{
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.contenido{
+    width: 94%;
+    margin: auto;
+}
+
+header img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 0%;
+    margin-top: -17px;
+    background-color: 1px 1px 30px black;  
+}
+
+nav{
+    list-style: none;
+    padding: 0%;
+    background: #007A5D;
+    width: 100%;
+    margin-top: -17px;
+    padding: 0px;
+    text-align: center;
+}
+
+nav li a{
+    text-decoration: none;
+    display: block;
+    padding: 20px 40px;
+    color: white;
+    text-shadow: 2px 2px #f7042500 ;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+nav li{
+    display: inline-block;
+    text-align: left;
+}
+
+nav li a:hover{
+    background-color: #392100;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+ li a{
+    padding: 0 30px;
+}
+
+aside{
+    width: 30%;
+    float: left;
+}
+
+.articles-section{
+    width: 75%;
+    float:left;
+    margin-left: 20%;
+}
+
+.controls{
+    width: 100%;
+    background-color: #ffffff;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    border: 1px solid #ffffff;
+    color: gray;
+}
+
+.servicios .botons{
+    width: 105%;
+    background-color: #ff6200c8;
+    border: none;
+    margin: 16px 0;
+    font-size: 16px;
+    padding: 12px;
+    color: white;
+    text-shadow: 2px 2px #762d00 ;
+
+
+}
+
+.servicios .botons:hover{
+    cursor:pointer;
+
+}
+
+.servicios .reset{
+    width: 105%;
+    background-color: #ffffff;
+    border: none;
+    margin: 16px 0;
+    font-size: 16px;
+    padding: 12px;
+    margin-top: 0%;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px #ececec ;
+}
+
+.servicios .reset:hover{
+    cursor:pointer;
+}
+
+.servicios{
+	float: center;
+	overflow:auto;
+    padding-bottom: 5%;
+    padding-left: 1%;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    padding-right: 40px;
+    margin: 0;
+    margin-top: 5%;
+    padding-top: 30px;
+}
+
+.contenedor2 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+
+aside{
+    background-color: #007A5D;
+    text-align: left;
+}
+
+.articles-section{
+    margin-top: 20px;
+    margin-left: 3%;
+    width: 66%;
+    height: 100%;
+    background-color: #007A5D;
+    text-align: justify;
+}
+
+section{
+    padding: 30px;
+}
+
+article{
+    padding: 30px;
+    background-color: #ffffff;
+
+}
+
+h1{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+footer{
+    width: 100%;
+    height: 260px;
+    float: left;
+    background-color: #007A5D;
+    margin-top: 20px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    color: white;
+    font-weight: 400px;
+}
+
+footer h1{
+    font-size: 25px;
+    color: #333333;
+    margin-left: 15px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+footer h4{
+    font-size: 25px;
+    color: antiquewhite;
+    margin-left: 15px;
+    text-align: left;
+    margin-top: -35px;
+}
+
+footer h2 {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+article img{
+    border-radius: 15px;
+    width: 90%;
+    min-width: 15%;
+    margin-right: 40px
+}
+
+
+p{
+    line-height: 30px;
+}
+
+.flex-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1139px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 40px 65px;
+    
+}
+
+@media screen and (max-width: 902px) {
+
+    .contenido{
+        width: 95%;
+    }
+
+    nav{
+        margin-top: 3%;
+        display: inline-block;
+        width: 105%;
+        margin-left: 0px;
+    }
+
+    ul li{
+        width: 100%;
+    }
+
+    .contenido{
+        margin: 0;
+        padding: 0;
+    }
+
+   #image{
+        width: 115%;
+    }
+
+
+    .articles-section{
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+    section article{
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+        padding: 10px 30px;
+    }
+
+    .servicios{
+        width: 50%;
+        margin: 0;
+        margin-top: 20px;
+        padding-left: 15%;
+    }
+
+    .botons .reset{
+        width: 70%;
+    }
+
+    footer{
+        height: 15%;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    header img{
+        width: 105%;
+    }
+}

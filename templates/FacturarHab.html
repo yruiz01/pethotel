@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+  <head>
+	  <title>Facturar Habitacion </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+    #div1 {
+	position: absolute;
+	width: 1000px;
+	height: 1000px;
+	z-index: 1;
+	left: 200px;
+	top: 80px;
+}
+
+div {
+#  padding: 7px
+}
+
+form {
+  /* Centrar el formulario en la página */
+  margin: 0 auto;
+  width: 1000px;
+  /* Esquema del formulario */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+
+
+    </style>
+    
+<center>
+
+  <h1>Formulario Facturar Habitación</h1> 
+	 <p>PetHotel</p>  <br>
+	 	 </center>
+
+    <!-- Optional JavaScript validarInsertarSocio.php-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../static/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+ 
+ <script>
+function calcular(){
+	
+	
+	//let fecha=document.getbyID
+	let f = document.getElementById("txtFecha").value;
+	let h = document.getElementById("lstHora").value;	
+	let doc = document.getElementById("lstVet").value;
+	let info="Se envio un msg a su Correo Electronico";
+	let med;
+	if(doc=="1"){med="Veterinario";	 }
+	if(doc=="2"){med="Estilista";	 }
+	if(doc=="3"){med="Entrenador";	 }
+		
+	let c = document.getElementById("txtUsuariocita").value;
+	alert("Cita:"+med+"\nFecha:"+f+"\nHora:"+h+"\nUsuario"+c+"\nInfo:"+info);
+	
+	}
+	
+function dias()
+{
+//calcula  los dias transcurridos y el valor
+  var date_1 = new Date(document.getElementById("txtFl").value);
+var date_2 = new Date(document.getElementById("txtFs").value);
+
+var day_as_milliseconds = 86400000;
+var diff_in_millisenconds = date_2 - date_1;
+var diff_in_days = diff_in_millisenconds / day_as_milliseconds;
+
+//console.log( diff_in_days );
+document.getElementById("txtDias").value=diff_in_days;
+var th=parseInt(document.getElementById("selTipoH").value);
+var sa=parseInt(document.getElementById("selSA").value);
+var costo=(diff_in_days-1)*th+sa;
+//muestra el valor calculado
+document.getElementById("txtTotal").value=costo;
+
+alert("Valor de la Estadia: "+costo);
+
+}
+	
+
+	
+	
+</script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<script>
+  $(function() {
+
+    $('#btnSignUpRH').click(function() {
+
+        $.ajax({
+
+            url: '/signUpRH',
+
+            data: $('form').serialize(),
+
+            type: 'POST',
+
+            success: function(response) {
+
+                console.log(response);
+
+            },
+
+            error: function(error) {
+
+                console.log(error);
+
+            }
+
+        });
+
+    });
+
+});
+
+  
+</script>
+
+
+
+ </head>
+<body >
+	  
+     
+      
+	 
+	   <form name="datosRH" id="datosRH" action="" method="post">
+	  <div class="form-row">
+	
+<div class="form-group col-md-6">
+     <b> <label for="inputEmail4">Nro. Reservación:</label> </b> 
+      <input type="text" class="form-control" id="txtIdrh" name="txtIdrh" maxlength="10" required >  <small>Ingrese numero de Reservación.</small>
+     </div> 
+
+     	  
+    
+    	 
+	<div class="form-group col-md-6">
+      <b><label for="inputEmail4">Nombre del Cliente:</label></b>
+      <input type="text" class="form-control" id="txtCliente" name="txtCliente" required> <small>Ingrese Nombres del cliente.</small>
+     </div> 
+	<div class="form-group col-md-6">
+      <b><label for="inputEmail4">Fecha de Llegada:</label></b>
+      <input type="date" class="form-control" id="txtFl" name="txtFl" required> <small>Ingrese Fecha de Llegada.</small>
+     </div>
+	<div class="form-group col-md-6">
+      <b><label for="inputEmail4">Fecha de Salida:</label></b>
+      <input type="date" class="form-control" id="txtFs" name="txtFs" required> <small>Ingrese Fecha de Salida.</small>
+     </div>
+	
+		
+	 <div class="form-group col-md-6">
+     <b><label for="inputEmail4">Tipo de Habitación:</label></b>
+	 <select id="selTipoH" name="selTipoH"class="form-control" >
+        <option selected> </option>
+        <option value="1000">Normal</option>
+        <option value="2000">Mini Deluxe</option>
+         <option value="5000">Grand Deluxe</option>
+       </select> <small>Ingrese tipo de Habitación </small>
+     </div> 
+	
+	
+	  
+       <div class="form-group col-md-6">
+      <b><label for="inputEmail4">Servicio Adicional:</label></b>
+     
+	 <select id="selSA" name="selSA"class="form-control" >
+        <option selected> </option>
+        <option value="0">Ninguno</option>
+        <option value="1000">Gimnasio</option>
+        <option value="2000">Restaurante</option>
+         <option value="5000">Guarderia</option>
+         <option value="15000">Transporte</option>
+       </select> <small>Ingrese tipo de Servicio Ad. </small>
+     </div> 
+     
+     
+     <div class="form-group col-md-6">
+      <b><label for="inputEmail4">Dias:</label></b>
+      <input type="text" class="form-control" id="txtDias" name="txtDias" required> <small>Dias de estadia.</small>
+     </div>
+     
+     
+     <div class="form-group col-md-6">
+      <b><label for="inputEmail4">Total a Pagar $:</label></b>
+      <input type="text" class="form-control" id="txtTotal" name="txtTotal" required disabled > <small>Valor total Calculado.</small>
+     </div>
+     </div>    
+	 
+	   
+      
+     </div> 
+	 
+	 
+	 
+	 
+	 </div>
+	
+	 
+	 </div>	 
+	
+<br><br>
+        <button id="btnSignUpRH" id="btnSignUpRH" type="button" class="btn btn-primary" onclick="dias();">Calcular.</button>
+
+      
+
+<button type="reset" class="btn btn-secondary" title="Limpiar formulario" >Limpiar Form.</button>
+<button type="button" name="BtnPrint" value="Imprimir"  class="btn btn-info oculto-impresion" onclick="window.print();">Imprimir</button>
+
+</form>
+
+</body>
+</html>

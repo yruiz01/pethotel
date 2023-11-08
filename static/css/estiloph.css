@@ -1,0 +1,52 @@
+header {
+   
+    padding: 25px;
+    background-color: blue;
+    
+}
+
+
+footer {
+   padding: 10px;
+   text-align: center;
+   color: black;
+   background-color: cyan;
+}
+
+
+
+nav{
+    list-style: none;
+    padding: 5%;
+    background-color: yellow;
+    background: yellow;
+    width: 100%;
+    margin-top: -17px;
+    padding: 0px;
+    text-align: center;
+}
+
+nav li a{
+    text-decoration: none;
+    display: block;
+    padding: 20px 40px;
+    color: black;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+nav li{
+    display: inline-block;
+    text-align: left;
+    color: black;
+}
+
+nav li a:hover{
+    background-color: cyan;
+    font-weight: bold;
+    font-size: 17px;
+    color: black;
+}
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>PetHotel-Admin-</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+/* Este es para los elementos en general */
+.navbar-light .navbar-nav .nav-link {
+color: orange;
+}
+/*  Este es para el elemento activo lo puedes omitir si asi deseas */
+.navbar-light .navbar-nav .active>.nav-link  {
+ color: red;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="./static/css/estiloph.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="./static/css/responsive.css" rel="stylesheet" />
+   
+  <script>
+	  function alerta()
+    {
+    var mensaje;
+    var opcion = confirm("Realemente desea Generar Backup?");
+    if (opcion == true) {
+	
+        mensaje = "Se ha creado archivo backup en la carpeta /Backups";
+		
+        alert(mensaje);
+	} else {
+	    mensaje = "Ha cancelado el Proceso";alert(mensaje);
+	}
+	//document.getElementById("ejemplo").innerHTML = mensaje;
+}
+</script>	  
+  
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a  href="index.html">
+           <img src="./static/pethotel.png" width="400" height="100">
+                      
+          </a>
+          
+         
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="showSignIni"target="myIFrame"> Inicio<span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Clientes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="Clientes">
+          <a class="dropdown-item" href="showSignUp"target="myIFrame">Nuevo cliente</a> 
+          <a class="dropdown-item" href="showSignUpDC"target="myIFrame">Editar cliente</a>
+          <a class="dropdown-item" href="showSignUpDelC"target="myIFrame">Dar de baja cliente</a>
+                 
+        </li>   
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Empleados
+        </a>
+      <div class="dropdown-menu" aria-labelledby="Empleados">
+          <a class="dropdown-item" href="showSignUpE"target="myIFrame">Nuevo Empleado</a>
+          <a class="dropdown-item" href="showSignUpDE"target="myIFrame">Editar Empleado</a>
+          <a class="dropdown-item" href="showSignUpDelE"target="myIFrame">Dar de baja Empleado</a>
+       </div> 
+       </li> 
+         
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Habitaciones
+        </a>
+      <div class="dropdown-menu" aria-labelledby="Habitacion">
+		  <a class="dropdown-item" href="showSignUpH"target="myIFrame">Crear Habitación</a>
+          <a class="dropdown-item" href="showSignUpRH" target="myIFrame">Reservar Habitación</a>
+          <a class="dropdown-item" href="showSignUpRepo" target="myIFrame">Habitaciones disponibles</a>
+        
+       </div> 
+       </li> 
+         
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Proveedores
+        </a>
+        <div class="dropdown-menu" aria-labelledby="Facturacion">
+          <a class="dropdown-item" href="showSignUpNP" target="myIFrame">Crear Proveedor</a>
+          
+          
+       </div> 
+       </li>  
+         
+         
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Facturación
+        </a>
+        <div class="dropdown-menu" aria-labelledby="Facturacion">
+          <a class="dropdown-item" href="showSignUpFac" target="myIFrame">Facturar Estadia</a>
+          <a class="dropdown-item" href="https://www.paypal.com" >Pagos por PayPal</a>
+       
+       
+       
+       
+          
+       </li>  
+              
+         <li class="nav-item active">
+        <a class="nav-link" href="/"> Salir<span class="sr-only">(current)</span></a>
+      </li>      
+    </ul>
+     
+  </div>
+</nav>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+     
+      </div>
+  
+    </header>
+    <!-- end header section -->
+    <!-- slider section style="border: 1px solid #000000;"-->
+ 
+		<iframe src="./static/centroPH.html" name="myIFrame" scrolling="auto" width="1920" height="750" style="border:none;overflow:hidden; z-index:999999;"></iframe>
+
+  
+  
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+</body>
+<footer>
+    <section class="container-fluid footer_section">
+    
+      <p>
+		  Correo:pethotel@gmail.com  |
+          Telefono:502 366 4067     |
+          Copyright &copy; 2023
+      </p>
+    </section>    
+    
+    </footer>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reporte de Habitaciones</title>
+    <script src="../static/js/jquery-3.7.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script>
+  $(function() {
+
+    $('#btnSignUpRepo').click(function() {
+
+        $.ajax({
+
+            url: '/signUpReporte',
+
+            data: $('form').serialize(),
+
+            type: 'POST',
+
+            success: function(response) {
+
+                console.log(response);
+
+            },
+
+            error: function(error) {
+
+                console.log(error);
+
+            }
+
+        });
+
+    });
+
+});
+
+  
+</script>
+    
+    
+</head>
+<body>
+	<table id="myTable" class="table table-bordered table-striped">                 
+   </table>
+    
+
+	<form id="frm1" name="frm1" action="/signUpReporte" method="post">
+   <button id="btnSignUpRepo" id="btnSignUpRepo" type="submit" class="btn btn-primary">Generar Reporte</button>
+    </form>
+    
+</body>
+</html>
