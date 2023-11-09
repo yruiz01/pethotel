@@ -3,7 +3,7 @@
 # hay que cambiar el nombre de la Bd por PetHotel y la clave por la clave de su gestor de bd quedaria como la sgte linea reemplazar en todos 
 # conn=psycopg2.connect(user='postgres',password='suclave',host='127.0.0.1',port='5432',database='PetHotel')
 from flask import Flask, render_template, json,jsonify, request
-
+from waitress import serve
 import psycopg2
 
 app = Flask(__name__)
