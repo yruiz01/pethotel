@@ -1,2 +1,4 @@
 Flask
 Gunicorn
+waitress
+waitress-serve
